@@ -13,7 +13,7 @@ import Kingfisher
 
 struct MyKeys {
     static let imagesFolder = "imagesFolder"
-    static let imagesCollection = "imagesCollection"
+    static let imagesAnalysis = "imagesAnalysis"
     static let uid = "uid"
     static let imageUrl = "imageUrl"
 }
@@ -43,61 +43,21 @@ class PreviewViewController: UIViewController {
         uploadPhoto()
         dismiss(animated: true, completion: nil)
     }
-    fileprivate func uploadPhoto() {
-        guard let image = imageView?.image, let data = image.jpegData(compressionQuality: 1.0) else{
-            let alertVC = UIAlertController(title: "Error", message: "#1", preferredStyle: .alert)
-            self.present(alertVC,animated: true, completion: nil)
-            return
-        }
-        let imageName = UUID().uuidString
-        let imageReference = Storage.storage().reference().child(MyKeys.imagesFolder).child(imageName)
-
-        imageReference.putData(data, metadata: nil) { (metadata, err) in
-            if let err = err {
-                let alertVC = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
-                self.present(alertVC,animated: true, completion: nil)
+    func uploadPhoto() {
+        let storageRef = Storage.storage().reference().child(MyKeys.imagesFolder)
+        
+        if let imageData = image!.jpegData(compressionQuality: 1) {
+            storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
+            
+                if error != nil {
+                    print(error?.localizedDescription as Any)
                 return
-            }
-            imageReference.downloadURL(completion: {(url, err) in
-            if let err = err {
-                let alertVC = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
-                self.present(alertVC,animated: true, completion: nil)
-                return
-            }
-                guard let url = url else {
-                        let alertVC = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
-                    self.present(alertVC,animated: true, completion: nil)
-                        return
                 }
-
-                let dataReference = Firestore.firestore().collection(MyKeys.imagesCollection).document()
-                let documentUid = dataReference.documentID
-
-                let urlString = url.absoluteString
-
-                let data = [
-                    MyKeys.uid: documentUid,
-                    MyKeys.imageUrl: urlString
-                ]
-
-                dataReference.setData(data, completion: { (err) in
-                    if let err = err {
-                        let alertVC = UIAlertController(title: "Error", message: err.localizedDescription, preferredStyle: .alert)
-                        self.present(alertVC,animated: true, completion: nil)
-                        return
-                    }
-                    UserDefaults.standard.set(documentUid, forKey: MyKeys.uid)
-
-                    self.imageView?.image = UIImage()
-
-                    let alertVC = UIAlertController(title: "Success", message: "Successfully saved image to database", preferredStyle: .alert)
-                    self.present(alertVC,animated: true, completion: nil)
-
-                })
-
-            })
-
+                print(metadata as Any)
+                
+        })
         }
     }
+    }
     
-}
+
