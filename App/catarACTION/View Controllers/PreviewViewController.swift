@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseStorage
 import FirebaseFirestore
-import Kingfisher
 
 struct MyKeys {
     static let imagesFolder = "imagesFolder"
@@ -44,7 +43,8 @@ class PreviewViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     func uploadPhoto() {
-        let storageRef = Storage.storage().reference().child(MyKeys.imagesFolder)
+        let imageName = NSUUID().uuidString
+        let storageRef = Storage.storage().reference().child(MyKeys.imagesFolder).child("\(imageName)")
         
         if let imageData = image!.jpegData(compressionQuality: 1) {
             storageRef.putData(imageData, metadata: nil, completion: { (metadata, error) in
