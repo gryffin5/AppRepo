@@ -57,7 +57,11 @@ class PreviewViewController: UIViewController {
                 
         })
         }
-    }
+        else {
+            let alertVC = UIAlertController(title: "Error", message: "Unable to Upload Image", preferredStyle: .alert)
+            self.present(alertVC, animated: true, completion: nil)
+        }
+        }
     }
     
 
