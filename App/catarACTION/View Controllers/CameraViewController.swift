@@ -120,6 +120,25 @@ class CameraViewController: UIViewController {
         currentDevice = newDevice
         captureSession.commitConfiguration()
     }
+    @IBAction func didTouchFlashButton(_ sender: Any) {
+        if let avDevice = AVCaptureDevice.default(for: AVMediaType.video) {
+            if (avDevice.hasTorch) {
+                do {
+                    try avDevice.lockForConfiguration()
+                } catch {
+                    print(error.localizedDescription)
+                }
+
+                if avDevice.isTorchActive {
+                    avDevice.torchMode = AVCaptureDevice.TorchMode.off
+                } else {
+                    avDevice.torchMode = AVCaptureDevice.TorchMode.on
+                }
+            }
+            // unlock your device
+            avDevice.unlockForConfiguration()
+        }
+    }
     @objc func zoomIn() {
         if let zoomFactor = currentDevice?.videoZoomFactor {
             if zoomFactor < 5.0 {

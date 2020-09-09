@@ -233,6 +233,14 @@
                                     <action selector="imageCapture:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="Pbn-gs-smm"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaT-LY-wEm">
+                                <rect key="frame" x="322" y="39" width="60" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="flash-icon"/>
+                                <connections>
+                                    <action selector="didTouchFlashButton:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="XIR-2F-sGW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kVo-4y-zJa"/>
@@ -313,6 +321,7 @@
     <resources>
         <image name="circle" width="222" height="227"/>
         <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <image name="flash-icon" width="243" height="300"/>
         <image name="flipCamera" width="200" height="200"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
     </resources>
