@@ -44,6 +44,12 @@ class CameraViewController: UIViewController {
            zoomOutGestureRecognizer.direction = .down
            zoomOutGestureRecognizer.addTarget(self, action: #selector(zoomOut))
            view.addGestureRecognizer(zoomOutGestureRecognizer)
+        
+        // Camera Focus
+        currentDevice?.isFocusModeSupported(.continuousAutoFocus)
+        try! currentDevice?.lockForConfiguration()
+        currentDevice?.focusMode = .continuousAutoFocus
+        currentDevice?.unlockForConfiguration()
        }
        
     func setupCaptureSession() {
