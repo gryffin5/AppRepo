@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseStorage
 import FirebaseFirestore
+import Kingfisher
 
 struct MyKeys {
     static let imagesFolder = "imagesFolder"
@@ -21,6 +22,7 @@ class PreviewViewController: UIViewController {
 
     @IBOutlet weak var photo: UIImageView!
     
+    let alertVC = UIAlertController(title: "Error", message: "Unable to Upload Image", preferredStyle: .alert)
     var image: UIImage?
     var imageView: UIImageView?
     
@@ -58,10 +60,46 @@ class PreviewViewController: UIViewController {
         })
         }
         else {
-            let alertVC = UIAlertController(title: "Error", message: "Unable to Upload Image", preferredStyle: .alert)
             self.present(alertVC, animated: true, completion: nil)
+            return
         }
         }
+    func downloadPhoto() {
+        guard let uid = UserDefaults.standard.value(forKey: MyKeys.uid) else {
+            self.present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        let query = Firestore.firestore().collection(MyKeys.imagesAnalysis).whereField(MyKeys.uid, isEqualTo: uid)
+        
+        query.getDocuments {(snapshot, err) in
+             
+            if let err = err {
+                self.present(self.alertVC, animated: true, completion: nil)
+                return
+            }
+            
+            guard let snapshot = snapshot,
+                let data = snapshot.documents.first?.data(),
+                let urlString = data[MyKeys.imageUrl] as? String,
+                let url = URL (string: urlString) else {
+                self.present(self.alertVC, animated: true, completion: nil)
+                return
+            }
+            
+            let resource = ImageResource(downloadURL: url)
+            self.imageView?.kf.setImage(with: resource, completionHandler: { (result) in
+                switch result {
+                case .success(_):
+                    let newAlertVC = UIAlertController(title: "Success", message: "Able to Download Image", preferredStyle: .alert)
+                    self.present(newAlertVC, animated: true, completion: nil)
+                case .failure(_):
+                    self.present(self.alertVC, animated: true, completion: nil)
+                }
+            })
+        }
+        
+    }
     }
     
 

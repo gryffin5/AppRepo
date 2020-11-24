@@ -174,6 +174,33 @@ class CameraViewController: UIViewController {
             }
         }
     }
+//    @objc func tapToFocus(_ sender: UITapGestureRecognizer) {
+//        if (sender.state == .ended) {
+//            let thisFocusPoint = sender.location(in: previewView)
+//
+//            print("touch to focus ", thisFocusPoint)
+//
+//            let focus_x = thisFocusPoint.x / previewView.frame.size.width
+//            let focus_y = thisFocusPoint.y / previewView.frame.size.height
+//
+//            if (captureDevice!.isFocusModeSupported(.autoFocus) && captureDevice!.isFocusPointOfInterestSupported) {
+//                do {
+//                    try captureDevice?.lockForConfiguration()
+//                    captureDevice?.focusMode = .autoFocus
+//                    captureDevice?.focusPointOfInterest = CGPoint(x: focus_x, y: focus_y)
+//
+//                    if (captureDevice!.isExposureModeSupported(.autoExpose) && captureDevice!.isExposurePointOfInterestSupported) {
+//                        captureDevice?.exposureMode = .autoExpose;
+//                        captureDevice?.exposurePointOfInterest = CGPoint(x: focus_x, y: focus_y);
+//                     }
+//
+//                    captureDevice?.unlockForConfiguration()
+//                } catch {
+//                    print(error)
+//                }
+//            }
+//        }
+//    }
     @IBAction func imageCapture(_ sender: Any) {
         let settings = AVCapturePhotoSettings()
         self.photoOutput?.capturePhoto(with: settings, delegate: self)

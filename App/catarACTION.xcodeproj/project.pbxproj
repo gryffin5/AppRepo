@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5855A629F1E0B850ABF87B2C /* Pods_catarACTION.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBC252B45B069EDDE7305AE1 /* Pods_catarACTION.framework */; };
+		C5278920256C8F7A00FD1C57 /* EyeDiseaseClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C527891F256C8F7A00FD1C57 /* EyeDiseaseClassifier 1.mlmodel */; };
+		C5278922256D911400FD1C57 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5278921256D911400FD1C57 /* User.swift */; };
 		C552D7CB24CF95BB003A6A15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552D7CA24CF95BB003A6A15 /* AppDelegate.swift */; };
 		C552D7CD24CF95BB003A6A15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552D7CC24CF95BB003A6A15 /* SceneDelegate.swift */; };
 		C552D7CF24CF95BB003A6A15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552D7CE24CF95BB003A6A15 /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		1ADA6B388C737E97E1DE0C62 /* Pods-catarACTION.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catarACTION.debug.xcconfig"; path = "Target Support Files/Pods-catarACTION/Pods-catarACTION.debug.xcconfig"; sourceTree = "<group>"; };
 		3CD57C94553182848C99FD7C /* Pods-catarACTION.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-catarACTION.release.xcconfig"; path = "Target Support Files/Pods-catarACTION/Pods-catarACTION.release.xcconfig"; sourceTree = "<group>"; };
+		C527891F256C8F7A00FD1C57 /* EyeDiseaseClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "EyeDiseaseClassifier 1.mlmodel"; sourceTree = "<group>"; };
+		C5278921256D911400FD1C57 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C552D7C724CF95BB003A6A15 /* catarACTION.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = catarACTION.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C552D7CA24CF95BB003A6A15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C552D7CC24CF95BB003A6A15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 		C552D7E424CF963E003A6A15 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C527891F256C8F7A00FD1C57 /* EyeDiseaseClassifier 1.mlmodel */,
 				C552D7CE24CF95BB003A6A15 /* ViewController.swift */,
 				C552D7DE24CF95FA003A6A15 /* SignUpViewController.swift */,
 				C552D7E024CF960A003A6A15 /* LoginViewController.swift */,
@@ -137,6 +142,7 @@
 			children = (
 				C552D7E824CFCE09003A6A15 /* Style.swift */,
 				C5F3E39F24D36D9900229FB2 /* Constants.swift */,
+				C5278921256D911400FD1C57 /* User.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -289,12 +295,14 @@
 				C5AF2C882501C23D0030D340 /* SettingsSection.swift in Sources */,
 				C552D7E124CF960A003A6A15 /* LoginViewController.swift in Sources */,
 				C5AF2C842501C1E00030D340 /* AnalysisViewController.swift in Sources */,
+				C5278922256D911400FD1C57 /* User.swift in Sources */,
 				C552D7CD24CF95BB003A6A15 /* SceneDelegate.swift in Sources */,
 				C5AF2C8E2501C36E0030D340 /* PreviewViewController.swift in Sources */,
 				C552D7E924CFCE09003A6A15 /* Style.swift in Sources */,
 				C5AF2C8C2501C28E0030D340 /* SettingsViewController.swift in Sources */,
 				C552D7E324CF9626003A6A15 /* HomeViewController.swift in Sources */,
 				C5AF2C8A2501C23D0030D340 /* UserInfoHeader.swift in Sources */,
+				C5278920256C8F7A00FD1C57 /* EyeDiseaseClassifier 1.mlmodel in Sources */,
 				C5F3E3A024D36D9900229FB2 /* Constants.swift in Sources */,
 				C5AF2C822501C1970030D340 /* CameraViewController.swift in Sources */,
 			);
@@ -425,7 +433,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZP8L8S7DAG;
 				"INFOPLIST_FILE[sdk=*]" = catarACTION/Base.lproj/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +454,7 @@
 				DEVELOPMENT_TEAM = ZP8L8S7DAG;
 				INFOPLIST_FILE = "";
 				"INFOPLIST_FILE[sdk=*]" = catarACTION/Base.lproj/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
