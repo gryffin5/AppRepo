@@ -42,6 +42,7 @@ class PreviewViewController: UIViewController {
         
         UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
         uploadPhoto()
+//        downloadPhoto()
         dismiss(animated: true, completion: nil)
     }
     func uploadPhoto() {
@@ -74,7 +75,7 @@ class PreviewViewController: UIViewController {
         
         query.getDocuments {(snapshot, err) in
              
-            if let err = err {
+            if err != nil {
                 self.present(self.alertVC, animated: true, completion: nil)
                 return
             }
@@ -100,6 +101,17 @@ class PreviewViewController: UIViewController {
         }
         
     }
-    }
-    
+  
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+
+            print ("beginning of segue is working")
+             if segue.identifier == "showImage"
+             {
+                let vc = segue.destination as! AnalysisViewController
+                vc.image = self.image
+                print ("segue is working")
+             }
+        }
+}
 

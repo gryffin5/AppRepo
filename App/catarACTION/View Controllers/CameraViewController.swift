@@ -34,6 +34,9 @@ class CameraViewController: UIViewController {
            setupInputOutput()
            setupPreviewLayer()
            captureSession.startRunning()
+        
+            //transparent nav bar
+           
            
            // Zoom In recognizer
            zoomInGestureRecognizer.direction = .up

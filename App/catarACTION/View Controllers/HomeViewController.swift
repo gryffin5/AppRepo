@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     }
     func addTabBar ()
     {
-        let analysisVC = AnalysisViewController()
+        let analysisVC = (self.storyboard?.instantiateViewController(withIdentifier: "AnalysisVC"))! as! AnalysisViewController
         let cameraVC = (self.storyboard?.instantiateViewController(withIdentifier: "CameraVC"))! as! CameraViewController
         
         let settingsVC = SettingsViewController()

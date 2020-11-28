@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HJJ-ti-agR">
                                 <rect key="frame" x="40" y="716" width="334" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dh-nB-3iD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dh-nB-3iD">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="2rN-tM-HBv"/>
@@ -29,7 +31,7 @@
                                             <segue destination="K0b-F1-lRo" kind="show" id="ziC-6a-P9o"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50F-Ub-Vdd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50F-Ub-Vdd">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
                                         <state key="normal" title="Login"/>
@@ -43,13 +45,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="HJJ-ti-agR" secondAttribute="bottom" constant="60" id="bpv-g3-Zvs"/>
                             <constraint firstAttribute="trailing" secondItem="HJJ-ti-agR" secondAttribute="trailing" constant="40" id="d5G-vD-VQl"/>
                             <constraint firstItem="HJJ-ti-agR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="drP-uf-sDI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="MBS-By-FfK"/>
                     <connections>
@@ -82,7 +84,7 @@
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXz-sK-e1T">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXz-sK-e1T">
                                         <rect key="frame" x="0.0" y="180" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="eEj-AW-snj"/>
@@ -96,7 +98,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1m-t0-aVb">
                                         <rect key="frame" x="0.0" y="270" width="334" height="24"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -106,13 +108,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ime-df-bAQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="2oq-sx-6qf" firstAttribute="leading" secondItem="ime-df-bAQ" secondAttribute="leading" constant="40" id="8oc-hj-Mxe"/>
                             <constraint firstItem="ime-df-bAQ" firstAttribute="trailing" secondItem="2oq-sx-6qf" secondAttribute="trailing" constant="40" id="D3q-Tv-cLQ"/>
                             <constraint firstItem="2oq-sx-6qf" firstAttribute="top" secondItem="ime-df-bAQ" secondAttribute="top" constant="150" id="aAu-5t-f0q"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ime-df-bAQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="8C2-FO-I5a"/>
                     <connections>
@@ -152,7 +154,7 @@
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GT-WK-Uoj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2GT-WK-Uoj">
                                         <rect key="frame" x="0.0" y="234" width="334" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="MDn-Yb-q4q"/>
@@ -166,19 +168,19 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T87-SI-uJ2">
                                         <rect key="frame" x="0.0" y="334" width="334" height="24"/>
                                         <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5lj-w3-cWx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JLs-Eg-vVq" firstAttribute="leading" secondItem="5lj-w3-cWx" secondAttribute="leading" constant="40" id="bAp-iS-2Jm"/>
                             <constraint firstItem="5lj-w3-cWx" firstAttribute="trailing" secondItem="JLs-Eg-vVq" secondAttribute="trailing" constant="40" id="jOv-e9-6g4"/>
                             <constraint firstItem="JLs-Eg-vVq" firstAttribute="top" secondItem="5lj-w3-cWx" secondAttribute="top" constant="150" id="zn9-99-FTX"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5lj-w3-cWx"/>
                     </view>
                     <navigationItem key="navigationItem" id="wYA-Vv-Duc"/>
                     <connections>
@@ -200,8 +202,8 @@
                     <view key="view" contentMode="scaleToFill" id="0O2-2g-H8m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="9nu-4a-qi8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="oHU-In-oq3"/>
                 </viewController>
@@ -217,14 +219,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnj-3D-sUk">
-                                <rect key="frame" x="20" y="44" width="66" height="66"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="flipCamera"/>
-                                <connections>
-                                    <action selector="rotateCamera:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="1M0-Xl-T9C"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxq-th-0Ei">
                                 <rect key="frame" x="154" y="650" width="65" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -234,16 +228,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaT-LY-wEm">
-                                <rect key="frame" x="322" y="39" width="60" height="76"/>
+                                <rect key="frame" x="322" y="44" width="60" height="76"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="flash-icon"/>
                                 <connections>
                                     <action selector="didTouchFlashButton:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="XIR-2F-sGW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnj-3D-sUk">
+                                <rect key="frame" x="20" y="44" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="flipCamera"/>
+                                <connections>
+                                    <action selector="rotateCamera:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="1M0-Xl-T9C"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kVo-4y-zJa"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <segue destination="LWf-01-gLx" kind="presentation" identifier="showPhoto_Segue" id="Pjv-Pc-qRE"/>
@@ -269,15 +271,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kl-aI-v9J">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kl-aI-v9J">
                                         <rect key="frame" x="319" y="9.9999999999998863" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="square.and.arrow.up.fill" catalog="system"/>
                                         <connections>
                                             <action selector="saveButton:" destination="LWf-01-gLx" eventType="touchUpInside" id="3th-Do-fyT"/>
+                                            <segue destination="39v-og-Q8l" kind="show" identifier="showImage" id="bhU-1Y-fPL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIA-G5-FAS">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIA-G5-FAS">
                                         <rect key="frame" x="28" y="9.6666666666667425" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" backgroundImage="clear.fill" catalog="system"/>
@@ -289,8 +292,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="oQy-wm-WPO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="photo" destination="BQQ-XJ-xzz" id="yAR-p0-UUh"/>
@@ -300,10 +303,51 @@
             </objects>
             <point key="canvasLocation" x="5984.057971014493" y="122.54464285714285"/>
         </scene>
+        <!--Analysis View Controller-->
+        <scene sceneID="vFd-E9-XgY">
+            <objects>
+                <viewController storyboardIdentifier="AnalysisVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="39v-og-Q8l" customClass="AnalysisViewController" customModule="catarACTION" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ng4-UY-o9B">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dd3-a0-456">
+                                <rect key="frame" x="20" y="30" width="374" height="398"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="398" id="h4K-cu-GTe"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tS-Jm-tDz">
+                                <rect key="frame" x="207" y="621" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1vl-6T-xyw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dd3-a0-456" firstAttribute="leading" secondItem="ng4-UY-o9B" secondAttribute="leadingMargin" id="6gb-T1-rQJ"/>
+                            <constraint firstItem="dd3-a0-456" firstAttribute="trailing" secondItem="ng4-UY-o9B" secondAttribute="trailingMargin" id="HpP-dV-GM2"/>
+                            <constraint firstItem="1vl-6T-xyw" firstAttribute="bottom" secondItem="3tS-Jm-tDz" secondAttribute="bottom" constant="187" id="J9o-aP-Lm9"/>
+                            <constraint firstItem="dd3-a0-456" firstAttribute="top" secondItem="1vl-6T-xyw" secondAttribute="top" constant="30" id="ZBV-s1-nhR"/>
+                            <constraint firstItem="3tS-Jm-tDz" firstAttribute="centerX" secondItem="ng4-UY-o9B" secondAttribute="centerX" id="sbF-j6-Wxk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KOX-3y-3Ed"/>
+                    <connections>
+                        <outlet property="imageView" destination="dd3-a0-456" id="MZf-qz-g90"/>
+                        <outlet property="textView" destination="3tS-Jm-tDz" id="hpD-oc-Sdi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd3-nd-1dU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6015.9420289855079" y="927.45535714285711"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cpW-zq-w9X">
             <objects>
-                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="TQ2-oK-SqW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" navigationBarHidden="YES" id="TQ2-oK-SqW" customClass="NavigationController" customModule="catarACTION" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vMl-oE-Qbb">
                         <autoresizingMask key="autoresizingMask"/>
@@ -324,5 +368,11 @@
         <image name="flash-icon" width="243" height="300"/>
         <image name="flipCamera" width="200" height="200"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

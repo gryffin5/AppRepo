@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpElements()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func setUpElements() {
