@@ -2,6 +2,8 @@
 //  SceneDelegate.swift
 //  catarACTION
 //
+//  Created by Elizabeth Winters on 8/14/20.
+//  Copyright © 2020 Sruti Peddi. All rights reserved.
 //
 
 import UIKit
@@ -20,19 +22,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let def = UserDefaults.standard
         let is_authenticated = def.bool(forKey: "is_authenticated") // return false if not found or stored value
          if is_authenticated {
-         // user logged in
+         // automatically logs in user
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let homeController = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeViewController
+            
          window = UIWindow(windowScene: windowScene)
          window?.makeKeyAndVisible()
-//         let controller = UINavigationController(rootViewController: homeController)
          window?.rootViewController = homeController
     }
          else {
-            print("Run 1")
-            //after else
+            // takes user to default vc
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let defaultController = storyboard.instantiateViewController(withIdentifier: "DefaultVC") as! ViewController
+            
             window = UIWindow(windowScene: windowScene)
             window?.makeKeyAndVisible()
             let controller = UINavigationController(rootViewController: defaultController)

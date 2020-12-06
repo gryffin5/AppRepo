@@ -13,14 +13,16 @@ class SettingsCell: UITableViewCell {
     
     // MARK: - Properties
     var sectionType: SectionType? {
+        
         didSet {
+        
             guard let sectionType = sectionType else { return }
             textLabel?.text = sectionType.description
             switchControl.isHidden = !sectionType.containsSwitch
-            
     }
     }
     lazy var switchControl: UISwitch = {
+        
         var switchControl = UISwitch()
         switchControl.isOn = true
         switchControl.onTintColor = UIColor(red: 0.0, green: 122.0/255, blue: 1.0, alpha: 1)
@@ -31,6 +33,7 @@ class SettingsCell: UITableViewCell {
     // MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(switchControl)
@@ -39,6 +42,7 @@ class SettingsCell: UITableViewCell {
     }
     
     required init?(coder aDecoder: NSCoder) {
+        
         fatalError("init(coder:) has not been implemented")
     }
     // MARK: - Selectors

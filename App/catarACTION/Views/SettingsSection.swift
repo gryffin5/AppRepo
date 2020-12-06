@@ -12,17 +12,21 @@ protocol SectionType: CustomStringConvertible {
     var containsSwitch: Bool { get }
 }
 
+// Create categories for buttons
 enum SettingsSection: Int, CaseIterable, CustomStringConvertible {
     case Preferences
     case Communications
     
     var description: String {
     switch self {
+    // Print when buttons in category are tapped
     case .Preferences: return "User Preferences"
     case .Communications: return "Communications"
     }
 }
 }
+
+// Add action when logOut button is tapped
 enum PreferencesOptions: Int, CaseIterable, SectionType
 {
     case logOut
@@ -30,10 +34,13 @@ enum PreferencesOptions: Int, CaseIterable, SectionType
     var containsSwitch: Bool { return false }
     var description: String {
     switch self {
+    // Print when buttons are tapped
     case .logOut: return "Log Out"
     }
 }
 }
+
+// Add action when communication buttons are tapped
 enum CommunicationsOptions: Int, CaseIterable, SectionType{
  
  case email
@@ -49,6 +56,7 @@ enum CommunicationsOptions: Int, CaseIterable, SectionType{
     
       var description: String {
       switch self {
+      // Print when buttons are tapped
       case .email: return "Email"
       case .reportCrashes: return "Report Crashes"
       }

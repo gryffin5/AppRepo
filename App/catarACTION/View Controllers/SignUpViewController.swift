@@ -1,7 +1,9 @@
 //
 //  SignUpViewController.swift
 //  catarACTION
-//  Copyright 2020 Sruti Peddi. All rights reserved.
+//
+//  Created by Elizabeth Winters on 8/14/20.
+//  Copyright © 2020 Sruti Peddi. All rights reserved.
 //
 
 
@@ -30,10 +32,10 @@ class SignUpViewController: UIViewController {
     }
     
     func setUpElements() {
-        //hides error label
+        // Hides error label
         errorLabel.alpha = 0
         
-        //Style signup elements
+        // Style Signup elements
         Style.styleTextField(userNameTextField)
         Style.styleTextField(emailTextField)
         Style.styleTextField(passwordTextField)
@@ -42,18 +44,18 @@ class SignUpViewController: UIViewController {
     
     func validateFields() -> String? {
         
-        //checks if all fields are filled
+        // Checks if all fields are filled
         if userNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
         {
             return "Please fill in all fields."
         }
-        //check if email is valid
+        // Check if email is valid
         let trimmedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if Style.emailIsValid(trimmedEmail) == false {
             return "Your email needs to be in a valid format"
         }
-        //check if password is secure
+        // Check if password is secure
         let trimmedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         if Style.passwordIsValid(trimmedPassword) == false {
@@ -63,25 +65,25 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpTapped(_ sender: Any) {
-        //validate the fields
+        // Validate the fields
         let error = validateFields()
         
         if error != nil {
-            //something's wrong, show error message
+            // Something's wrong, show Error Message
             showError(error!)
         }
         else {
             
-            //create trimmed data
+            // Create trimmed data
             let userName = userNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             //create the user
             Auth.auth().createUser(withEmail: email, password: password) { (result,err) in
                 
-                //check for errors
+                // Check for errors
                 if err != nil {
-                    //error creating user
+                    // Error creating user
                     self.showError(err?.localizedDescription ?? "Error creating user")
                 }
                 else {
@@ -90,7 +92,7 @@ class SignUpViewController: UIViewController {
                         print(userName)
                     changeRequest?.commitChanges { (error) in print ("Username not created") }
 
-                    //transition to home screen
+                    // Transition to home screen
                     self.saveLoggedState()
                     self.transitionHome()
                 }

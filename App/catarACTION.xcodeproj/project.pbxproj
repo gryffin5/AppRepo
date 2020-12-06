@@ -129,10 +129,10 @@
 				C552D7DE24CF95FA003A6A15 /* SignUpViewController.swift */,
 				C552D7E024CF960A003A6A15 /* LoginViewController.swift */,
 				C552D7E224CF9626003A6A15 /* HomeViewController.swift */,
-				C5AF2C832501C1E00030D340 /* AnalysisViewController.swift */,
-				C5AF2C8B2501C28D0030D340 /* SettingsViewController.swift */,
 				C5AF2C812501C1970030D340 /* CameraViewController.swift */,
 				C5AF2C8D2501C36E0030D340 /* PreviewViewController.swift */,
+				C5AF2C832501C1E00030D340 /* AnalysisViewController.swift */,
+				C5AF2C8B2501C28D0030D340 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

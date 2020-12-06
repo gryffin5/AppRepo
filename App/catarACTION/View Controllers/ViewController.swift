@@ -1,7 +1,9 @@
 //
 //  ViewController.swift
 //  catarACTION
-//  Copyright 2020 Sruti Peddi. All rights reserved.
+//
+//  Created by Elizabeth Winters on 8/14/20.
+//  Copyright © 2020 Sruti Peddi. All rights reserved.
 //
 
 import UIKit
@@ -24,7 +26,7 @@ class ViewController: UIViewController {
     }
     
     func setUpElements() {
-        //styling buttons
+        // Styling Buttons
         Style.styleFilledButton(signUpButton ?? defaultSignUpButton)
         Style.styleHollowButton(loginButton ?? defaultLoginButton)
         

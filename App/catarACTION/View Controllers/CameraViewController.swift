@@ -29,13 +29,12 @@ class CameraViewController: UIViewController {
        
        override func viewDidLoad() {
            super.viewDidLoad()
+           // Set up inputs and outputs
            setupCaptureSession()
            setupDevice()
            setupInputOutput()
            setupPreviewLayer()
            captureSession.startRunning()
-        
-            //transparent nav bar
            
            
            // Zoom In recognizer
@@ -54,12 +53,13 @@ class CameraViewController: UIViewController {
         currentDevice?.focusMode = .continuousAutoFocus
         currentDevice?.unlockForConfiguration()
        }
-       
+    // Real Time Capture
     func setupCaptureSession() {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
     }
     
     func setupDevice() {
+        // check if current device can take pictures
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [AVCaptureDevice.DeviceType.builtInWideAngleCamera], mediaType: AVMediaType.video, position: AVCaptureDevice.Position.unspecified)
         let devices = deviceDiscoverySession.devices
         
@@ -101,7 +101,6 @@ class CameraViewController: UIViewController {
         self.view.layer.insertSublayer(self.cameraPreviewLayer!, at: 0)
     }
 
-
     @IBAction func rotateCamera(_ sender: Any) {
         captureSession.beginConfiguration()
         
@@ -129,25 +128,28 @@ class CameraViewController: UIViewController {
         currentDevice = newDevice
         captureSession.commitConfiguration()
     }
+    
     @IBAction func didTouchFlashButton(_ sender: Any) {
         if let avDevice = AVCaptureDevice.default(for: AVMediaType.video) {
+            // Check if flash is possible
             if (avDevice.hasTorch) {
                 do {
                     try avDevice.lockForConfiguration()
                 } catch {
                     print(error.localizedDescription)
                 }
-
+                // Toggle flash on or off based on current state
                 if avDevice.isTorchActive {
                     avDevice.torchMode = AVCaptureDevice.TorchMode.off
                 } else {
                     avDevice.torchMode = AVCaptureDevice.TorchMode.on
                 }
             }
-            // unlock your device
+            // Unlock your device
             avDevice.unlockForConfiguration()
         }
     }
+    
     @objc func zoomIn() {
         if let zoomFactor = currentDevice?.videoZoomFactor {
             if zoomFactor < 5.0 {
@@ -177,34 +179,9 @@ class CameraViewController: UIViewController {
             }
         }
     }
-//    @objc func tapToFocus(_ sender: UITapGestureRecognizer) {
-//        if (sender.state == .ended) {
-//            let thisFocusPoint = sender.location(in: previewView)
-//
-//            print("touch to focus ", thisFocusPoint)
-//
-//            let focus_x = thisFocusPoint.x / previewView.frame.size.width
-//            let focus_y = thisFocusPoint.y / previewView.frame.size.height
-//
-//            if (captureDevice!.isFocusModeSupported(.autoFocus) && captureDevice!.isFocusPointOfInterestSupported) {
-//                do {
-//                    try captureDevice?.lockForConfiguration()
-//                    captureDevice?.focusMode = .autoFocus
-//                    captureDevice?.focusPointOfInterest = CGPoint(x: focus_x, y: focus_y)
-//
-//                    if (captureDevice!.isExposureModeSupported(.autoExpose) && captureDevice!.isExposurePointOfInterestSupported) {
-//                        captureDevice?.exposureMode = .autoExpose;
-//                        captureDevice?.exposurePointOfInterest = CGPoint(x: focus_x, y: focus_y);
-//                     }
-//
-//                    captureDevice?.unlockForConfiguration()
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//        }
-//    }
+    
     @IBAction func imageCapture(_ sender: Any) {
+        // Take photo
         let settings = AVCapturePhotoSettings()
         self.photoOutput?.capturePhoto(with: settings, delegate: self)
         }
@@ -219,6 +196,7 @@ class CameraViewController: UIViewController {
 extension CameraViewController: AVCapturePhotoCaptureDelegate {
     
 func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+    // Convert image to data
     if let imageData = photo.fileDataRepresentation() {
         self.image = UIImage(data: imageData)
         self.performSegue(withIdentifier: "showPhoto_Segue", sender: self)

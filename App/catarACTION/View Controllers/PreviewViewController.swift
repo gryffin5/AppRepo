@@ -12,6 +12,7 @@ import FirebaseFirestore
 import Kingfisher
 
 struct MyKeys {
+    // Create keys to be used later
     static let imagesFolder = "imagesFolder"
     static let imagesAnalysis = "imagesAnalysis"
     static let uid = "uid"
@@ -30,11 +31,11 @@ class PreviewViewController: UIViewController {
         super.viewDidLoad()
         photo.image = self.image
     }
-    
+    // Discard image
     @IBAction func cancelButton(_ sender: Any) {
            dismiss(animated: true, completion: nil)
     }
-    
+    // Save Image to Camera Roll
     @IBAction func saveButton(_ sender: Any) {
         guard let imageToSave = image else {
             return
@@ -42,9 +43,10 @@ class PreviewViewController: UIViewController {
         
         UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil, nil)
         uploadPhoto()
-//        downloadPhoto()
+        // downloadPhoto()
         dismiss(animated: true, completion: nil)
     }
+    // Upload to Firebase Storage
     func uploadPhoto() {
         let imageName = NSUUID().uuidString
         let storageRef = Storage.storage().reference().child(MyKeys.imagesFolder).child("\(imageName)")
@@ -60,11 +62,13 @@ class PreviewViewController: UIViewController {
                 
         })
         }
+        
         else {
             self.present(alertVC, animated: true, completion: nil)
             return
         }
         }
+    // For future use if downloaded photo is needed
     func downloadPhoto() {
         guard let uid = UserDefaults.standard.value(forKey: MyKeys.uid) else {
             self.present(alertVC, animated: true, completion: nil)
@@ -102,8 +106,8 @@ class PreviewViewController: UIViewController {
         
     }
   
+    // Send image to AnalysisVC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
 
             print ("beginning of segue is working")
              if segue.identifier == "showImage"

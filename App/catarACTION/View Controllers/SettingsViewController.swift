@@ -12,16 +12,17 @@ import UIKit
     
     class SettingsViewController: UIViewController {
     
-        // Properties
+        // MARK: - Properties
         var tableView: UITableView!
         var userInfoHeader: UserInfoHeader!
-        // Init
+        // MARK: - Init
         override func viewDidLoad() {
             super.viewDidLoad()
            view.backgroundColor = .white
             configureUI()
         }
-        //Helper Functions
+        // MARK: - Helper Functions
+        // Construct settings table
         func configureTableView() {
             tableView = UITableView()
             tableView.delegate = self
@@ -37,6 +38,7 @@ import UIKit
             tableView.tableHeaderView = userInfoHeader
             tableView.tableFooterView = UIView()
         }
+        // Additional details
         func configureUI() {
             configureTableView()
     
@@ -61,6 +63,7 @@ import UIKit
                 case .Communications: return CommunicationsOptions.allCases.count
                 }
             }
+        // style sections
         func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
             let view = UIView()
             view.backgroundColor = UIColor(red: 0.0, green: 122.0/255, blue: 1.0, alpha: 1)
@@ -85,7 +88,7 @@ import UIKit
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
             
             guard let section = SettingsSection(rawValue: indexPath.section) else { return UITableViewCell()}
-            
+            // Allow user to choose different sections
             switch section {
             case .Preferences:
                 let preferences = PreferencesOptions(rawValue: indexPath.row)
@@ -97,7 +100,7 @@ import UIKit
             
             return cell
         }
-    
+        // Return user to defaultvc when logout button is tapped
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             guard let section = SettingsSection(rawValue: indexPath.section) else { return }
             switch section {

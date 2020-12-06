@@ -1,7 +1,9 @@
 //
 //  HomeViewController.swift
 //  catarACTION
-//  Copyright 2020 Sruti Peddi. All rights reserved.
+//
+//  Created by Elizabeth Winters on 8/14/20.
+//  Copyright © 2020 Sruti Peddi. All rights reserved.
 //
 
 import UIKit
@@ -13,26 +15,26 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTabBar()
+        // Do any additional setup after loading the view.
+        
     }
     func addTabBar ()
     {
-        let analysisVC = (self.storyboard?.instantiateViewController(withIdentifier: "AnalysisVC"))! as! AnalysisViewController
+        // Transition to vc when tab bar item is tapped
         let cameraVC = (self.storyboard?.instantiateViewController(withIdentifier: "CameraVC"))! as! CameraViewController
         
         let settingsVC = SettingsViewController()
         
-        let analysisItem = UITabBarItem(title: "Analysis", image: UIImage(named: "gallery-icon")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "blueGallery-icon"))
-        analysisItem.imageInsets = UIEdgeInsets(top: 0, left: -10, bottom: -5, right: -10)
-        
+        // Style items
         let cameraItem = UITabBarItem(title: "Camera", image: UIImage(named: "camera-icon")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "blueCamera-icon"))
         
         let settingsItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings-icon")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), selectedImage: UIImage(named: "blueSettings-icon"))
         
-        analysisVC.tabBarItem = analysisItem
+        // Create tabs and Organize
         cameraVC.tabBarItem = cameraItem
         settingsVC.tabBarItem = settingsItem
         
-        tabBar.viewControllers = [analysisVC, cameraVC, settingsVC]
+        tabBar.viewControllers = [cameraVC, settingsVC]
         
         self.view.addSubview(tabBar.view)
         

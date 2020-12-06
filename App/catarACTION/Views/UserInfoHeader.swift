@@ -12,7 +12,7 @@ import Firebase
 class UserInfoHeader: UIView {
     
     // MARK: - Properties
-    
+    // Style Profile Icon
     let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -21,7 +21,7 @@ class UserInfoHeader: UIView {
         iv.image = UIImage(named: "user-icon")
         return iv
     }()
-    
+    // Style Username Label
     let usernameLabel: UILabel = {
         let label = UILabel()
         let name = Auth.auth().currentUser?.displayName
@@ -30,7 +30,7 @@ class UserInfoHeader: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+    // Style Email Address Label
     let emailLabel: UILabel = {
         let label = UILabel()
         let userEmail = Auth.auth().currentUser?.email
@@ -45,7 +45,7 @@ class UserInfoHeader: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        // Position Profile Icon
         let profileImageDimension: CGFloat = 60
         
         addSubview(profileImageView)

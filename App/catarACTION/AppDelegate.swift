@@ -2,8 +2,9 @@
 //  AppDelegate.swift
 //  catarACTION
 //
+//  Created by Elizabeth Winters on 8/14/20.
+//  Copyright © 2020 Sruti Peddi. All rights reserved.
 //
-
 import UIKit
 import Firebase
 import FirebaseCore
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // Override point for customization after application launch.
+        // Set up Firebase
         
         FirebaseApp.configure()
         

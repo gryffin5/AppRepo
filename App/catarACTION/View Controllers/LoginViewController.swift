@@ -1,7 +1,9 @@
 //
 //  LoginViewController.swift
 //  catarACTION
-//  Copyright 2020 Sruti Peddi. All rights reserved.
+//
+//  Created by Elizabeth Winters on 8/14/20.
+//  Copyright © 2020 Sruti Peddi. All rights reserved.
 //
 
 
@@ -9,8 +11,6 @@ import UIKit
 import FirebaseAuth
 
 class LoginViewController: UIViewController {
-    
-    
     
     @IBOutlet weak var emailTextField: UITextField!
     
@@ -29,9 +29,9 @@ class LoginViewController: UIViewController {
     }
     
     func setUpElements (){
-        //hides error label
+        // Hides error label
         errorLabel.alpha = 0
-        //sets up login elements
+        // Sets up login elements
         Style.styleTextField(emailTextField)
         Style.styleTextField(passwordTextField)
         Style.styleHollowButton(loginButton)
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        //check if all fields are filled
+        // Check if all fields are filled
         func validateFields() -> String? {
             if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
             {
@@ -48,18 +48,18 @@ class LoginViewController: UIViewController {
             }
             return nil
         }
-        //trimmed text fields
+        // Trimmed Text Fields
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         //signing in user
         Auth.auth().signIn(withEmail: email, password: password) {(result, error) in
             if error != nil {
-                //can't sign in
+                // Can't sign in
                 self.errorLabel.text = "Unable to login user"
                 self.errorLabel.alpha = 1
             }
             else {
-                //user logs in successfully
+                // User logs in successfully
                 self.saveLoggedState()
                 self.transitionHome()
             }
@@ -70,7 +70,8 @@ class LoginViewController: UIViewController {
     func saveLoggedState() {
         
         let def = UserDefaults.standard
-        def.set(true, forKey: "is_authenticated") // save true flag to UserDefaults
+        // Save true flag to UserDefaults
+        def.set(true, forKey: "is_authenticated")
         def.synchronize()
         
     }
