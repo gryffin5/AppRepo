@@ -2,7 +2,7 @@
 //  InfoViewController.swift
 //  catarACTION
 //
-//  Created by Elizabeth Winters on 8/12/20.
+//  Created by Elizabeth Winters on 11/12/20.
 //  Copyright © 2020 Sruti Peddi. All rights reserved.
 //
 import CoreML

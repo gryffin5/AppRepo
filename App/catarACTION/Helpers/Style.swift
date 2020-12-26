@@ -1,7 +1,9 @@
 //
 //  Style.swift
 //  catarACTION
-//  Copyright 2011 Sruti Peddi. All rights reserved.
+//
+//  Created by Elizabeth Winters on 10/23/20.
+//  Copyright © 2020 Sruti Peddi. All rights reserved.
 //
 
 import UIKit

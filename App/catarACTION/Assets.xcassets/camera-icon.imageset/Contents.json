@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "camera-icon.png",
+      "filename" : "camera-icon-bicubic.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
