@@ -38,7 +38,7 @@ class AnalysisViewController: UIViewController {
     func detect(image: CIImage) {
         let config = MLModelConfiguration()
         // Container for CoreML requests
-        guard let model = try? VNCoreMLModel(for: EyeDiseaseClassifier_1(configuration: config).model) else {
+        guard let model = try? VNCoreMLModel(for: EyeDiseaseClassifier_2_copy_2(configuration: config).model) else {
             fatalError("Loading CoreML Model Failed.")
         }
         // Request image and uses CoreML to process images
