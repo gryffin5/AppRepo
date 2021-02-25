@@ -29,6 +29,7 @@ class CameraViewController: UIViewController {
        
        override func viewDidLoad() {
            super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
            // Set up inputs and outputs
            setupCaptureSession()
            setupDevice()
@@ -53,6 +54,7 @@ class CameraViewController: UIViewController {
         currentDevice?.focusMode = .continuousAutoFocus
         currentDevice?.unlockForConfiguration()
        }
+    
     // Real Time Capture
     func setupCaptureSession() {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo

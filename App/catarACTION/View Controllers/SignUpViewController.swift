@@ -12,7 +12,8 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 
-class SignUpViewController: UIViewController {
+
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userNameTextField: UITextField!
     
@@ -29,6 +30,28 @@ class SignUpViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         setUpElements()
+        self.userNameTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+    }
+    
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    // Hide Keyboard
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //Presses Return Key
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return (true)
     }
     
     func setUpElements() {
@@ -113,6 +136,7 @@ class SignUpViewController: UIViewController {
     }
     func transitionHome() {
         
+        hideKeyboard()
         let homeVC = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
         self.view.window?.rootViewController = UINavigationController(rootViewController: homeVC!)
         self.view.window?.makeKeyAndVisible()

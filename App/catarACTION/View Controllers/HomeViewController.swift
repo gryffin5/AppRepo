@@ -14,10 +14,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
         addTabBar()
         // Do any additional setup after loading the view.
         
     }
+    
     func addTabBar ()
     {
         // Transition to vc when tab bar item is tapped

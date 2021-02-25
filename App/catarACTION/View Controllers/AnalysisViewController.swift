@@ -23,7 +23,7 @@ class AnalysisViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+ 
         // Set up where result for picture is shown
         view.backgroundColor = .white
         imageView?.image = image
