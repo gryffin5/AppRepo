@@ -227,20 +227,20 @@
                                     <action selector="imageCapture:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="Pbn-gs-smm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaT-LY-wEm">
-                                <rect key="frame" x="322" y="44" width="60" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="flash-icon"/>
-                                <connections>
-                                    <action selector="didTouchFlashButton:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="XIR-2F-sGW"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnj-3D-sUk">
                                 <rect key="frame" x="20" y="44" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="flipCamera"/>
                                 <connections>
                                     <action selector="rotateCamera:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="1M0-Xl-T9C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaT-LY-wEm">
+                                <rect key="frame" x="308" y="44" width="60" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="flash-icon"/>
+                                <connections>
+                                    <action selector="didTouchFlashButton:" destination="Bvg-Hu-3yP" eventType="touchUpInside" id="XIR-2F-sGW"/>
                                 </connections>
                             </button>
                         </subviews>
