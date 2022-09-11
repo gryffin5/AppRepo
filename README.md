@@ -2,7 +2,7 @@ This is my App repository for catarACTION built with Swift 5 in XCode 11.5.
 # catarACTION 
 catarACTION is an app installed on an iOS device designed to take a fundus/retinal picture of an eye with a 3D-printed attachment.
 ## Motivation
-I decided to create this project during my quarantine over summer. I realized that because we are all staying at home it is harder for people with other medical conditions to be diagnosed. This has especially hurt the large numbers of people with serious eye problems who don't have access to the expensive equipment required to diagnose their conditions. Thus, I decided to develop an affordable solution to help people diagnose their conditions because the faster they receive.
+I decided to create this project during my summer. I realized that it is harder for people with other medical conditions to be diagnosed. This has especially hurt the large numbers of people with serious eye problems who don't have access to the expensive equipment required to diagnose their conditions. Thus, I decided to develop an affordable solution to help people diagnose their conditions because the faster they receive.
 ## Build Status
 Build is succeeding with Travis Continuous Integration Services.
 ## Code Style
